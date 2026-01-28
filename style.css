@@ -1,9 +1,29 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #111;
+  color: white;
   text-align: center;
 }
 
-h1 {
-  color: #333;
+.movies {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.movie {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  width: 220px;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie h2 {
+  margin: 10px 0 5px;
 }
