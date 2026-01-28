@@ -1,55 +1,20 @@
-// Add your movies here
-const movies = [
-  {
-    title: "Almost Famous",
-    genre: "Drama",
-    rating: "8.2",
-    poster: "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg"
-  },
-  {
-    title: "Interstellar",
-    genre: "Sci-Fi",
-    rating: "8.6",
-    poster: "https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg"
-  },
-  {
-    title: "The Dark Knight",
-    genre: "Action",
-    rating: "9.0",
-    poster: "https://m.media-amazon.com/images/I/51EbJjlYTEL._AC_.jpg"
-  },
-  {
-    title: "The Godfather",
-    genre: "Crime",
-    rating: "9.2",
-    poster: "https://m.media-amazon.com/images/I/41+eK8zBwQL._AC_.jpg"
-  }
-];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Recommendations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-// Display movies
-const container = document.getElementById("moviesContainer");
+  <h1>🎬 Movie Recommendations by Genre</h1>
 
-function displayMovies(list) {
-  container.innerHTML = "";
-  list.forEach(movie => {
-    const movieDiv = document.createElement("div");
-    movieDiv.classList.add("movie");
-    movieDiv.innerHTML = `
-      <img src="${movie.poster}" alt="${movie.title} poster">
-      <h2>${movie.title}</h2>
-      <p>⭐ ${movie.rating}</p>
-      <p>${movie.genre}</p>
-    `;
-    container.appendChild(movieDiv);
-  });
-}
+  <input type="text" id="searchInput" placeholder="Search by genre..." onkeyup="filterMovies()">
 
-// Filter movies by genre
-function filterMovies() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = movies.filter(m => m.genre.toLowerCase().includes(input));
-  displayMovies(filtered);
-}
+  <div id="moviesContainer">
+    <!-- Movies will appear here -->
+  </div>
 
-// Initial display
-displayMovies(movies);
+  <script src="script.js"></script>
+</body>
+</html>
